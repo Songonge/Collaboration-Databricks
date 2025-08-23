@@ -86,7 +86,7 @@ Come back to Databricks:
 * Create a folder under Repos.
 * Create a Git folder by clicking on `Create` and selecting `Repo`.
 
-In GitHub:  
+In GitHub:
 * Click on your picture on the top right of your screen.
 * Click on `Settings`.
 * Locate `Developer Settings` and click on it.
