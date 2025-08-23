@@ -99,7 +99,7 @@ In GitHub:
 * Click on your name at the top right.
 * Select Settings -> Linked Accounts -> Add Git Credentials -> Personal Access Tokens.
 * Paste the token
-* Click on `Save`
+* Click on `Save`  
 
 * Create a branch
   * Click on `main`.
