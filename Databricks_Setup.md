@@ -79,6 +79,7 @@ In Databricks,
 * Write & execute basic Spark SQL or Python commands.  
 
 Below is an example  
+
 ![Example](https://github.com/Songonge/Collaboration-Databricks/blob/main/Example.png)
 
 ### Step 3: Go back to Azure
