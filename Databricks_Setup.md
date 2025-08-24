@@ -7,13 +7,13 @@ This document details the steps followed to complete the setup in Databricks.
 > [!NOTE]
 > The steps below are done in **Azure**.
 
-## Step 1: Create an Azure Account
+## Step 1: Creating an Azure Account
 You should note that Databricks runs on Azure. This means that you should first create an account on Azure. To do that, follow the link below:
 * https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account
 
 After creating your account, access the Azure Portal to manage your resources.
 
-## Step 2: Create a Resource Group
+## Step 2: Creating a Resource Group
 * Search for `resource group` in the search bar. 
 * Select it and click on Create. 
 * Give it a meaningful name
