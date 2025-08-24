@@ -76,7 +76,8 @@ In Databricks,
 * Load a sample data.
 * Select the folder you just created. Click again on Create and select `Notebook`. 
 * Create a notebook and give it a name.
-* Write & execute basic Spark SQL or Python commands.
+* Write & execute basic Spark SQL or Python commands.  
+
 Below is an example
 ![Example](https://github.com/Songonge/Collaboration-Databricks/blob/main/Example.png)
 
