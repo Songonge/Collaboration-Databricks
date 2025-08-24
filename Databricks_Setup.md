@@ -31,7 +31,7 @@ In the Azure Portal,
 > [!NOTE]
 > Whenever asked for a region, you should input the same region you used while creating your workspace.
 
-### Step 4: Create a Storage Group
+### Step 4: Creating a Storage Group
 * Select the resource group.
 * Give a name to the storage group. This should be unique and in lowercase.
 * Select Standard
@@ -40,12 +40,14 @@ In the Azure Portal,
 * Click on `Next`.
 * Click on `Review and Create`, then on `Create`.
 
-### Step 5: Create a Container
+### Step 5: Creating a Container
 This is done under your storage account. Proceed as follows:  
-* Click on `Containers`.
+* Under `Data Storage`, select `Containers`.
 * Click on Create and give it a name.
-* Add a directory. This is where you will upload your dataset.
-* Upload your dataset.
+* Open the container you just created and create a directory. This is where you will upload your dataset. You can also create a subdirectory inside your directory.
+* Upload your dataset into the directory or subdirectory.
+* Confirm that the directory structure is correctly created and accessible.
+
 
 When all the above are completed, you can now launch your workspace.
 * Go to Home -> Resource
@@ -82,24 +84,41 @@ Below is an example
 
 ![Example](https://github.com/Songonge/Collaboration-Databricks/blob/main/Example.png)
 
-### Step 3: Go back to Azure
+Go back to Azure
 * Copy the ID of the connector under `databricks-access-connector`.
 * Go back to Databricks.
 * Click on `Catalog` -> `External data` -> `Credentials` -> `Create credentials`.
 * Paste the ID you just copied from Azure.  
 
-In **Azure**, go to:  
-* Storage Accounts -> Container (your container you created) -> Access Control (IAM).
-* Click on `+Add` -> Select `Add Role Assignment`.
-* Search for `Storage Blob Data Contributor`. and select it. This will be highlighted in Grey.
-* Click on `Next` -> Managed identity -> Select `Managed identities` -> Subscription -> Managed identity.
+## Step 3: Creating a Databricks Access Connector
+In the Azure Portal, search for `Databricks Access Connector`.  
 * Select `Access connector for Azure Databricks` -> databricks-access-connector
-* Select -> Review + Assign
+* Click Create -> Assign it to the appropriate Resource Group
+* Input the name and region. Here, you can use default settings or configure as needed
+* Click Review + Create -> Create
+* Copy and keep the Resource ID
 
-### Step 4: This is in GitHub
+## Step 4: Granting Access to the Storage Account
+This is done using Managed Identity. Proceed as follows:  
+* Navigate to the Storage Account -> Container (your container you created) -> Access Control (IAM)
+* Click on `Add` -> Select `Add Role Assignment`.
+* Search for `Storage Blob Data Contributor`. and select it. This will be highlighted in Grey.
+* Assign the role to the Managed Identity of the Databricks Access Connector.
+* Click on `Next` -> Managed identity -> Select `Managed identities` -> Subscription -> Managed identity. 
+* Click Save.
+
+## Step 5: Connecting External Storage from Databricks
+This is done using the Resource ID. Proceed as follows:  
+* In Databricks, use the Resource ID of the Access Connector
+* Configure access using credentials passthrough or workspace settings
+* No need to mount storage manually
+* Validate access within your notebook
+
+
+## Step 6: This is in GitHub
 * Create a repository and add a README.
 
-Come back to Databricks:  
+Go back to Databricks:  
 * Create a folder under Repos.
 * Create a Git folder by clicking on `Create` and selecting `Repo`.
 
@@ -112,7 +131,7 @@ In GitHub:
 * Generate a token if you do not have one.
 * Copy it somewhere.
 
-### Step 5: In Databricks
+## Step 7: In Databricks
 * Click on your name at the top right.
 * Select Settings -> Linked Accounts -> Add Git Credentials -> Personal Access Tokens.
 * Paste the token
