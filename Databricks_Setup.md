@@ -11,16 +11,25 @@ This document details the steps followed to complete the setup in Databricks.
 You should note that Databricks runs on Azure. This means that you should first create an account on Azure. To do that, follow the link below:
 * https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account
 
+After creating your account, access the Azure Portal to manage your resources.
+
 ## Step 2: Create a Resource Group
 * Search for `resource group` in the search bar. 
 * Select it and click on Create. 
 * Give it a meaningful name
 
-### Step 3: Create a Workspace
+### Step 3: Creating a Databricks Workspace
+In the Azure Portal,  
+* Search for Azure Databricks and create a new workspace.
 * Select the resource group you just created.
-* Click on `Create` and put the name.
-* Select Premium
+* Input the Workspace name.
+* Choose the region (East US recommended if you do not know what to put.)
+* Choose the Pricing Tier: Premium (+ Role-based access controls)
+* Go to the Networking tab and select no for both questions.
 * Review and Create
+
+> [!NOTE]
+> Whenever asked for a region, you should input the same region you used while creating your workspace.
 
 ### Step 4: Create a Storage Group
 * Select the resource group.
@@ -39,31 +48,37 @@ This is done under your storage account. Proceed as follows:
 * Upload your dataset.
 
 When all the above are completed, you can now launch your workspace.
-* Go to Home 
-* Select the Databricks workspace you created earlier.
+* Go to Home -> Resource
+* Find the Databricks workspace you created earlier.
 * Click on `Launch Workspace`.
 * This opens Databricks in a new page on your browser.
 
 > [!NOTE]
 > The steps below are done in **Databricks**.
 
-## Step 1: Create a Cluster
+## Step 1: Creating a Spark Cluster
+In Databricks,  
 * Click on `Compute`.
 * Click on `Create` on the top right of your screen.
 * Change the name if needed.
-* Select the runtime: `13.3 LTS` or `14.3 LTS` (Scala 2.12 Spark 3.5.0). This is to bring the DBU to `0.75`.
-* Untick `Use Photon Acceleration`.
-* Select the Node Type: `Standard_D4s_vs`
-* Terminate after `30 minutes` of inactivity.
+* Choose the `Single node`.
+* Select the runtime: `13.3 LTS (Scala 2.12 Spark 3.4.1)` or `14.3 LTS (Scala 2.12 Spark 3.5.0)`. This is to bring the compute price to `0.75 DBU/h`.
+* Uncheck `Use Photon Acceleration`.
+* Select the Node Type: `Standard_D4s_v3 16 GB Memory, 4 Cores`
+* Terminate after `30` minutes of inactivity.
 
 > [!WARNING]
 > Always ensure that you are running your work on your cluster and NOT the serverless.
 > This is to avoid tremendous billing on your Azure account.
 
-## Step 2: Create a Folder
+## Step 2: Creating a Folder and Running Your First Notebook
 * On the top right of your screen, click on `Create` and select `Folder`. Give it a name and create it.
+* Load a sample data.
 * Select the folder you just created. Click again on Create and select `Notebook`. 
 * Create a notebook and give it a name.
+* Write & execute basic Spark SQL or Python commands.
+Below is an example
+![Example](https://github.com/Songonge/Collaboration-Databricks/blob/main/Example.png)
 
 ### Step 3: Go back to Azure
 * Copy the ID of the connector under `databricks-access-connector`.
