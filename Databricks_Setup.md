@@ -143,7 +143,7 @@ In GitHub:
   * Name your branch -> Create.
 
 > [!NOTE]
-> It is important to always work in a secondary branch instead of the main branch.
+> It is advised to always work in a secondary branch instead of the main branch.
 > This is where you can do all your testing before sending it to a third-party person who is responsible for deploying your work in the main branch.
 
 ## Connecting Power BI to Databricks
