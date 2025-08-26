@@ -146,9 +146,29 @@ In GitHub:
 > It is important to always work in a secondary branch instead of the main branch.
 > This is where you can do all your testing before sending it to a third-party person who is responsible for deploying your work in the main branch.
 
+## Connecting Power BI to Databricks
+It is possible to connect Databricks to Power BI. Follow the steps below to connect.
 
+In Databricks:  
+1. Log in to your Azure Portal.
+2. Launch your Databricks Workspace.
+3. Once your Databricks page opens, click on **Marketplace**.
+4. Type **Power BI** in the `Search for products bar`.
+5. Select Power BI Desktop.
+6. Click on the Connect button at the top right of your screen. This opens a side window.
+7. Click on `Download the connection file` and save it on your computer.
+8. Locate the file on your computer and open it. It will launch Power BI, and a small pop-up window will appear.  
 
+In Power BI:  
+1. Select `Azure Active Directory` and sign in.
+2. When you are done signing in, click on `Connect`.
+3. Now you are good to go.  
 
+When these steps are completed, any dataset uploaded to Databricks will be accessible in Power BI.
+
+> [!IMPORTANT]
+> For the above steps to work, you should ensure you have a Power BI Desktop version installed on your computer.
+> You can also use Tableau if you do not have Power BI. Either one you select should be installed on your computer.
 
 
 
